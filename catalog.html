@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lift Kabinalari Katalogi | LIFTPRO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/catalog.css" />
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
+
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-text">LIFT<span class="highlight">PRO</span></span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+          <li class="nav-item"><a href="catalog.html" class="nav-link active">Katalog</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">Kompaniya Haqida</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Bog'lanish</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-title">Lift Kabinalari Katalogi</h1>
+      <div class="breadcrumbs">
+        <a href="index.html">Bosh Sahifa</a> / <span>Katalog</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="catalog-filters">
+    <div class="container">
+      <div class="filter-container">
+        <div class="filter-group">
+          <label class="filter-label">Kategoriya:</label>
+          <select class="filter-select" id="category-filter">
+            <option value="all">Barcha kategoriyalar</option>
+            <option value="premium">Premium</option>
+            <option value="standard">Standart</option>
+            <option value="economy">Ekonom</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Yuk ko'tarish quvvati:</label>
+          <select class="filter-select" id="capacity-filter">
+            <option value="all">Barcha quvvatlar</option>
+            <option value="small">Kichik (320-450 kg)</option>
+            <option value="medium">O'rta (450-630 kg)</option>
+            <option value="large">Katta (630-1000 kg)</option>
+            <option value="extra">Ekstra (1000+ kg)</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label class="filter-label">Material:</label>
+          <select class="filter-select" id="material-filter">
+            <option value="all">Barcha materiallar</option>
+            <option value="steel">Zanglamaydigan po'lat</option>
+            <option value="glass">Shisha</option>
+            <option value="wood">Yog'och</option>
+            <option value="marble">Marmar</option>
+          </select>
+        </div>
+        <button class="btn btn-primary filter-button" id="apply-filters">
+          <i class="fas fa-filter"></i> Filtrlash
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog-content">
+    <div class="container">
+      <div class="catalog-grid" id="catalog-items">
+        <!-- Model 1 -->
+        <div class="catalog-item" id="model1" data-category="premium" data-capacity="medium" data-material="marble">
+          <div class="item-image">
+            <img src="img/Schindler 5500 SAO - Dusk Grey.jpg" alt="K-01 Premium" />
+            <div class="item-badges">
+              <span class="badge premium">Premium</span>
+              <span class="badge new">Yangi</span>
+            </div>
+            <div class="view-360-badge" data-model="model1">
+              <i class="fas fa-360-degrees"></i>
+            </div>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">K-01 Premium</h3>
+            <p class="item-description">Qora marmar panelli premium lift kabinasi</p>
+            <div class="item-specs">
+              <div class="spec">
+                <i class="fas fa-users"></i>
+                <span>8 kishi</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-weight-hanging"></i>
+                <span>630 kg</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-ruler-combined"></i>
+                <span>1100 x 1400 mm</span>
+              </div>
+            </div>
+            <div class="item-actions">
+              <button class="btn btn-primary view-details-btn" data-model="model1">Batafsil</button>
+              <button class="btn btn-outline qr-btn" data-model="model1">
+                <i class="fas fa-qrcode"></i> QR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model 2 -->
+        <div class="catalog-item" id="model2" data-category="standard" data-capacity="medium" data-material="steel">
+          <div class="item-image">
+            <img src="img/Schindler 5500 SAO - Mercury Brushed.jpg" alt="K-02 Modern" />
+            <div class="item-badges">
+              <span class="badge standard">Standart</span>
+            </div>
+            <div class="view-360-badge" data-model="model2">
+              <i class="fas fa-360-degrees"></i>
+            </div>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">K-02 Modern</h3>
+            <p class="item-description">Metall panelli zamonaviy lift kabinasi</p>
+            <div class="item-specs">
+              <div class="spec">
+                <i class="fas fa-users"></i>
+                <span>6 kishi</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-weight-hanging"></i>
+                <span>450 kg</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-ruler-combined"></i>
+                <span>1000 x 1250 mm</span>
+              </div>
+            </div>
+            <div class="item-actions">
+              <button class="btn btn-primary view-details-btn" data-model="model2">Batafsil</button>
+              <button class="btn btn-outline qr-btn" data-model="model2">
+                <i class="fas fa-qrcode"></i> QR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model 3 -->
+        <div class="catalog-item" id="model3" data-category="standard" data-capacity="medium" data-material="glass">
+          <div class="item-image">
+            <img src="img/Schindler 5500 SAO - Navona Brushed.jpg" alt="K-03 Klassik" />
+            <div class="item-badges">
+              <span class="badge standard">Standart</span>
+              <span class="badge bestseller">Bestseller</span>
+            </div>
+            <div class="view-360-badge" data-model="model3">
+              <i class="fas fa-360-degrees"></i>
+            </div>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">K-03 Klassik</h3>
+            <p class="item-description">Klassik dizayndagi lift kabinasi</p>
+            <div class="item-specs">
+              <div class="spec">
+                <i class="fas fa-users"></i>
+                <span>6 kishi</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-weight-hanging"></i>
+                <span>450 kg</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-ruler-combined"></i>
+                <span>1000 x 1250 mm</span>
+              </div>
+            </div>
+            <div class="item-actions">
+              <button class="btn btn-primary view-details-btn" data-model="model3">Batafsil</button>
+              <button class="btn btn-outline qr-btn" data-model="model3">
+                <i class="fas fa-qrcode"></i> QR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model 4 -->
+        <div class="catalog-item" id="model4" data-category="premium" data-capacity="large" data-material="glass">
+          <div class="item-image">
+            <img src="img/Schindler 5500 SAO + SCG - Glacier Grey Glass.jpg" alt="K-04 Panorama" />
+            <div class="item-badges">
+              <span class="badge premium">Premium</span>
+            </div>
+            <div class="view-360-badge" data-model="model4">
+              <i class="fas fa-360-degrees"></i>
+            </div>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">K-04 Panorama</h3>
+            <p class="item-description">Panoramali shisha lift kabinasi</p>
+            <div class="item-specs">
+              <div class="spec">
+                <i class="fas fa-users"></i>
+                <span>10 kishi</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-weight-hanging"></i>
+                <span>800 kg</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-ruler-combined"></i>
+                <span>1200 x 1500 mm</span>
+              </div>
+            </div>
+            <div class="item-actions">
+              <button class="btn btn-primary view-details-btn" data-model="model4">Batafsil</button>
+              <button class="btn btn-outline qr-btn" data-model="model4">
+                <i class="fas fa-qrcode"></i> QR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model 5 -->
+        <div class="catalog-item" id="model5" data-category="economy" data-capacity="small" data-material="steel">
+          <div class="item-image">
+            <img src="img/Schindler 3000 + 5000 MR AP (001) - Pearl White + Clove Grey.jpg" alt="K-05 Ekonom" />
+            <div class="item-badges">
+              <span class="badge economy">Ekonom</span>
+            </div>
+            <div class="view-360-badge" data-model="model5">
+              <i class="fas fa-360-degrees"></i>
+            </div>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">K-05 Ekonom</h3>
+            <p class="item-description">Iqtisodiy sinfga mansub lift kabinasi</p>
+            <div class="item-specs">
+              <div class="spec">
+                <i class="fas fa-users"></i>
+                <span>4 kishi</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-weight-hanging"></i>
+                <span>320 kg</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-ruler-combined"></i>
+                <span>900 x 1100 mm</span>
+              </div>
+            </div>
+            <div class="item-actions">
+              <button class="btn btn-primary view-details-btn" data-model="model5">Batafsil</button>
+              <button class="btn btn-outline qr-btn" data-model="model5">
+                <i class="fas fa-qrcode"></i> QR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model 6 -->
+        <div class="catalog-item" id="model6" data-category="standard" data-capacity="large" data-material="wood">
+          <div class="item-image">
+            <img src="img/Schindler 3000 + 5000 MR AP (002) - Penthouse Wood.jpg" alt="K-06 Elegance" />
+            <div class="item-badges">
+              <span class="badge standard">Standart</span>
+            </div>
+            <div class="view-360-badge" data-model="model6">
+              <i class="fas fa-360-degrees"></i>
+            </div>
+          </div>
+          <div class="item-details">
+            <h3 class="item-title">K-06 Elegance</h3>
+            <p class="item-description">Yog'och panelli elegent lift kabinasi</p>
+            <div class="item-specs">
+              <div class="spec">
+                <i class="fas fa-users"></i>
+                <span>8 kishi</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-weight-hanging"></i>
+                <span>630 kg</span>
+              </div>
+              <div class="spec">
+                <i class="fas fa-ruler-combined"></i>
+                <span>1100 x 1400 mm</span>
+              </div>
+            </div>
+            <div class="item-actions">
+              <button class="btn btn-primary view-details-btn" data-model="model6">Batafsil</button>
+              <button class="btn btn-outline qr-btn" data-model="model6">
+                <i class="fas fa-qrcode"></i> QR
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pagination">
+    <div class="container">
+      <div class="pagination-controls">
+        <a href="#" class="pagination-prev disabled"><i class="fas fa-chevron-left"></i></a>
+        <div class="pagination-numbers">
+          <a href="#" class="pagination-number active">1</a>
+          <a href="#" class="pagination-number">2</a>
+          <a href="#" class="pagination-number">3</a>
+        </div>
+        <a href="#" class="pagination-next"><i class="fas fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Katalogda kerakli modelni topa olmadingizmi?</h2>
+        <p class="cta-description">Biz bilan bog'laning va bizning mutaxassislarimiz sizga yordam beradi</p>
+        <a href="contact.html" class="btn btn-primary">Bog'lanish</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <span class="logo-text">LIFT<span class="highlight">PRO</span></span>
+          </div>
+          <p class="footer-description">Zamonaviy va ishonchli lift yechimlari yetkazib beruvchi yetakchi kompaniya.</p>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Tezkor Havolalar</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Bosh Sahifa</a></li>
+            <li><a href="catalog.html">Katalog</a></li>
+            <li><a href="about.html">Kompaniya Haqida</a></li>
+            <li><a href="contact.html">Bog'lanish</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Bog'lanish</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Toshkent sh., Chilonzor tumani, Bunyodkor ko'chasi, 12-uy</li>
+            <li><i class="fas fa-phone"></i> +998 90 123 45 67</li>
+            <li><i class="fas fa-envelope"></i> info@liftpro.uz</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Ijtimoiy Tarmoqlar</h3>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 LIFTPRO. Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="model-details-modal" class="modal">
+    <div class="modal-content model-details-content">
+      <span class="close-modal">&times;</span>
+      <div class="model-details-container">
+        <div class="model-gallery">
+          <div class="main-image">
+            <img id="modal-main-image" src="" alt="Lift modeli" />
+          </div>
+          <div class="thumbnail-images">
+            <div class="thumbnail active" data-src="img/Schindler 5500 SAO - Dusk Grey.jpg">
+              <img src="img/Schindler 5500 SAO - Dusk Grey.jpg" alt="Thumbnail 1" />
+            </div>
+            <div class="thumbnail" data-src="img/Schindler 5500 SAO - Mercury Brushed.jpg">
+              <img src="img/Schindler 5500 SAO - Mercury Brushed.jpg" alt="Thumbnail 2" />
+            </div>
+            <div class="thumbnail" data-src="img/Schindler 5500 SAO - Navona Brushed.jpg">
+              <img src="img/Schindler 5500 SAO - Navona Brushed.jpg" alt="Thumbnail 3" />
+            </div>
+          </div>
+        </div>
+        <div class="model-info">
+          <h2 id="modal-model-title">Model nomi</h2>
+          <p id="modal-model-description">Model tavsifi</p>
+          
+          <div class="model-specs">
+            <h3>Texnik ma'lumotlar</h3>
+            <table class="specs-table">
+              <tr>
+                <td>Sig'im:</td>
+                <td id="modal-capacity">8 kishi</td>
+              </tr>
+              <tr>
+                <td>Yuk ko'tarish quvvati:</td>
+                <td id="modal-weight">630 kg</td>
+              </tr>
+              <tr>
+                <td>O'lchamlari:</td>
+                <td id="modal-dimensions">1100 x 1400 mm</td>
+              </tr>
+              <tr>
+                <td>Tezlik:</td>
+                <td id="modal-speed">1.6 m/s</td>
+              </tr>
+              <tr>
+                <td>Material:</td>
+                <td id="modal-material">Qora marmar va zanglamaydigan po'lat</td>
+              </tr>
+              <tr>
+                <td>Yoritish:</td>
+                <td id="modal-lighting">LED chiroqlar</td>
+              </tr>
+              <tr>
+                <td>Qavat ko'rsatkichi:</td>
+                <td id="modal-indicators">Raqamli LCD displey</td>
+              </tr>
+              <tr>
+                <td>Xavfsizlik tizimlari:</td>
+                <td id="modal-safety">Avtomatik qutqarish tizimi, Sensor eshiklar</td>
+              </tr>
+            </table>
+          </div>
+          
+          <div class="model-features">
+            <h3>Qo'shimcha funktsiyalar</h3>
+            <ul id="modal-features">
+              <li><i class="fas fa-check"></i> Ovoz xabarlari</li>
+              <li><i class="fas fa-check"></i> Havoni tozalash tizimi</li>
+              <li><i class="fas fa-check"></i> Wi-Fi ulanish imkoniyati</li>
+              <li><i class="fas fa-check"></i> Energiya tejash rejimi</li>
+              <li><i class="fas fa-check"></i> Sensor boshqaruv paneli</li>
+            </ul>
+          </div>
+          
+          <div class="model-actions">
+            <button class="btn btn-primary open-360-view" id="modal-360-btn">
+              <i class="fas fa-360-degrees"></i> 360° ko'rinish
+            </button>
+            <button class="btn btn-secondary" id="modal-contact-btn">
+              <i class="fas fa-envelope"></i> So'rov yuborish
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="view-360-modal" class="modal">
+    <div class="modal-content view-360-content">
+      <span class="close-modal">&times;</span>
+      <h3 class="modal-title">360° ko'rinish</h3>
+      <div id="panorama-container"></div>
+      <div class="view-controls">
+        <button class="btn btn-control" id="rotate-left">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <button class="btn btn-control" id="zoom-in">
+          <i class="fas fa-search-plus"></i>
+        </button>
+        <button class="btn btn-control" id="zoom-out">
+          <i class="fas fa-search-minus"></i>
+        </button>
+        <button class="btn btn-control" id="rotate-right">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="qr-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 class="modal-title">Lift modelini 360° ko'rish uchun QR kodni skanerlang</h3>
+      <div id="qrcode"></div>
+      <p class="modal-description">Ushbu QR kodni skaner qilish orqali liftni 360° aylantirib ko'rishingiz mumkin</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+  <script src="js/main.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

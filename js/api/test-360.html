@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIFTPRO - Zamonaviy Lift Yechimlari</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+  <style>
+    :root {
+      --primary-color: #3d56b2;
+      --primary-dark: #2a3d8c;
+      --gray-color: #4a5568;
+      --light-gray: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.5;
+      background: #f8fafc;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header Styles */
+    .header {
+      background: var(--white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 8rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(rgba(61, 86, 178, 0.9), rgba(61, 86, 178, 0.8)),
+                  url('img/Schindler 5500 SAO - Dusk Grey.jpg') center/cover;
+      color: var(--white);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Catalog Grid */
+    .catalog {
+      padding: 4rem 0;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .elevator-card {
+      background: var(--white);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .elevator-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .elevator-image {
+      height: 250px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .elevator-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .elevator-card:hover .elevator-image img {
+      transform: scale(1.05);
+    }
+
+    .elevator-details {
+      padding: 1.5rem;
+    }
+
+    .elevator-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .elevator-specs {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .elevator-specs li {
+      margin-bottom: 0.5rem;
+      color: var(--gray-color);
+    }
+
+    .elevator-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--primary-color);
+      color: var(--white);
+    }
+
+    /* QR Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+
+    #qrcode {
+      margin: 2rem auto;
+      width: 200px;
+      height: 200px;
+    }
+
+    /* 360 Viewer */
+    #panorama {
+      width: 100%;
+      height: 500px;
+    }
+
+    .viewer-controls {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .catalog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .elevator-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">LIFT<span style="color: #f97316">PRO</span></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Zamonaviy Lift Yechimlari</h1>
+      <p>Yuqori sifatli va ishonchli lift kabinalari</p>
+    </div>
+  </section>
+
+  <section class="catalog">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Lift Kabinalari Katalogi</h2>
+      <div class="catalog-grid" id="elevator-grid"></div>
+    </div>
+  </section>
+
+  <!-- QR Code Modal -->
+  <div class="modal" id="qr-modal">
+    <div class="modal-content">
+      <h3>Lift modelini 360° ko'rish uchun QR kodni skanerlang</h3>
+      <div id="qrcode"></div>
+      <p style="margin-top: 1rem;">QR kodni skaner qilish orqali liftni 360° aylantirib ko'rishingiz mumkin</p>
+      <button class="btn btn-primary" onclick="closeModal()">Yopish</button>
+    </div>
+  </div>
+
+  <!-- 360 Viewer Modal -->
+  <div class="modal" id="viewer-modal">
+    <div class="modal-content" style="max-width: 800px;">
+      <div id="panorama"></div>
+      <div class="viewer-controls">
+        <button class="btn btn-outline" id="rotate-left"><i class="fas fa-arrow-left"></i></button>
+        <button class="btn btn-outline" id="zoom-in"><i class="fas fa-search-plus"></i></button>
+        <button class="btn btn-outline" id="zoom-out"><i class="fas fa-search-minus"></i></button>
+        <button class="btn btn-outline" id="rotate-right"><i class="fas fa-arrow-right"></i></button>
+      </div>
+      <button class="btn btn-primary" style="margin-top: 1rem;" onclick="closeModal()">Yopish</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script>
+    // Elevator data
+    const elevators = {
+      model1: {
+        id: 'model1',
+        title: 'K-01 Premium',
+        description: 'Qora marmar panelli premium lift kabinasi',
+        image: 'img/Schindler 5500 SAO - Dusk Grey.jpg',
+        capacity: '8 kishi',
+        weight: '630 kg',
+        dimensions: '1100 x 1400 mm',
+        speed: '1.6 m/s',
+        material: 'Qora marmar va zanglamaydigan po`lat'
+      },
+      model2: {
+        id: 'model2',
+        title: 'K-02 Modern',
+        description: 'Metall panelli zamonaviy lift kabinasi',
+        image: 'img/Schindler 5500 SAO - Mercury Brushed.jpg',
+        capacity: '6 kishi',
+        weight: '450 kg',
+        dimensions: '1000 x 1250 mm',
+        speed: '1.2 m/s',
+        material: 'Brushed zanglamaydigan po`lat'
+      },
+      model3: {
+        id: 'model3',
+        title: 'K-03 Klassik',
+        description: 'Klassik dizayndagi lift kabinasi',
+        image: 'img/Schindler 5500 SAO - Navona Brushed.jpg',
+        capacity: '6 kishi',
+        weight: '450 kg',
+        dimensions: '1000 x 1250 mm',
+        speed: '1.0 m/s',
+        material: 'Yog`och va shisha panellar'
+      }
+    };
+
+    // Generate elevator cards
+    function renderElevators() {
+      const grid = document.getElementById('elevator-grid');
+      grid.innerHTML = Object.values(elevators).map(elevator => `
+        <div class="elevator-card">
+          <div class="elevator-image">
+            <img src="${elevator.image}" alt="${elevator.title}" />
+          </div>
+          <div class="elevator-details">
+            <h3 class="elevator-title">${elevator.title}</h3>
+            <p>${elevator.description}</p>
+            <ul class="elevator-specs">
+              <li><i class="fas fa-users"></i> Sig'imi: ${elevator.capacity}</li>
+              <li><i class="fas fa-weight-hanging"></i> Yuk ko'tarish: ${elevator.weight}</li>
+              <li><i class="fas fa-ruler-combined"></i> O'lchamlari: ${elevator.dimensions}</li>
+              <li><i class="fas fa-tachometer-alt"></i> Tezligi: ${elevator.speed}</li>
+            </ul>
+            <div class="elevator-actions">
+              <button class="btn btn-primary" onclick="show360View('${elevator.id}')">
+                360° Ko'rinish
+              </button>
+              <button class="btn btn-outline" onclick="showQRCode('${elevator.id}')">
+                <i class="fas fa-qrcode"></i> QR Kod
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // QR code functionality
+    function showQRCode(modelId) {
+      const modal = document.getElementById('qr-modal');
+      const qrContainer = document.getElementById('qrcode');
+      qrContainer.innerHTML = '';
+      
+      new QRCode(qrContainer, {
+        text: `${window.location.origin}/360-view.html?model=${modelId}`,
+        width: 200,
+        height: 200,
+        colorDark: '#3d56b2',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+      });
+      
+      modal.classList.add('active');
+    }
+
+    // 360 viewer functionality
+    function show360View(modelId) {
+      const modal = document.getElementById('viewer-modal');
+      modal.classList.add('active');
+      
+      const viewer = pannellum.viewer('panorama', {
+        type: 'equirectangular',
+        panorama: elevators[modelId].image,
+        autoLoad: true,
+        autoRotate: -2,
+        compass: false
+      });
+
+      setupViewerControls(viewer);
+    }
+
+    function setupViewerControls(viewer) {
+      document.getElementById('rotate-left').onclick = () => {
+        viewer.setYaw(viewer.getYaw() - 30);
+      };
+      document.getElementById('rotate-right').onclick = () => {
+        viewer.setYaw(viewer.getYaw() + 30);
+      };
+      document.getElementById('zoom-in').onclick = () => {
+        viewer.setHfov(viewer.getHfov() - 10);
+      };
+      document.getElementById('zoom-out').onclick = () => {
+        viewer.setHfov(viewer.getHfov() + 10);
+      };
+    }
+
+    function closeModal() {
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.classList.remove('active');
+      });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderElevators();
+    });
+
+    // Close modal when clicking outside
+    window.onclick = (event) => {
+      if (event.target.classList.contains('modal')) {
+        closeModal();
+      }
+    };
+  </script>
+</body>
+</html>

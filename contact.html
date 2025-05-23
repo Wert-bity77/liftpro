@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bog'lanish | LIFTPRO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/contact.css" />
+</head>
+<body>
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
+
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <span class="logo-text">LIFT<span class="highlight">PRO</span></span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+          <li class="nav-item"><a href="catalog.html" class="nav-link">Katalog</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">Kompaniya Haqida</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link active">Bog'lanish</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-title">Bog'lanish</h1>
+      <div class="breadcrumbs">
+        <a href="index.html">Bosh Sahifa</a> / <span>Bog'lanish</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="contact-info">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3 class="contact-title">Manzil</h3>
+          <p class="contact-text">Toshkent sh., Chilonzor tumani, Bunyodkor ko'chasi, 12-uy</p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <h3 class="contact-title">Telefon</h3>
+          <p class="contact-text">+998 90 123 45 67</p>
+          <p class="contact-text">+998 71 234 56 78</p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="contact-title">Elektron pochta</h3>
+          <p class="contact-text">info@liftpro.uz</p>
+          <p class="contact-text">sales@liftpro.uz</p>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="contact-title">Ish vaqti</h3>
+          <p class="contact-text">Dushanba - Juma: 9:00 - 18:00</p>
+          <p class="contact-text">Shanba: 9:00 - 13:00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-form-section">
+    <div class="container">
+      <div class="contact-form-container">
+        <div class="form-side">
+          <h2 class="section-title">So'rov yuborish</h2>
+          <p class="form-description">
+            Bizga xabar yuboring va mutaxassislarimiz siz bilan tez orada bog'lanishadi.
+          </p>
+          <form id="contact-form" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Ism-familiya <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Ism va familiyangizni kiriting" />
+              </div>
+              <div class="form-group">
+                <label for="company">Kompaniya nomi</label>
+                <input type="text" id="company" name="company" placeholder="Kompaniya nomini kiriting" />
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Elektron pochta <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="Elektron pochta manzilingizni kiriting" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon raqami <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required placeholder="+998 XX XXX XX XX" />
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Mavzu <span class="required">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Mavzuni tanlang</option>
+                <option value="order">Buyurtma berish</option>
+                <option value="consultation">Konsultatsiya olish</option>
+                <option value="service">Texnik xizmat</option>
+                <option value="other">Boshqa</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Xabar <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" required placeholder="Xabar matnini kiriting"></textarea>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="agree" name="agree" required />
+              <label for="agree">
+                Shaxsiy ma'lumotlarimni qayta ishlashga rozilik bildiraman
+              </label>
+            </div>
+            
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary btn-submit">
+                <i class="fas fa-paper-plane"></i> Yuborish
+              </button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="map-side">
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.068674835601!2d69.2236013!3d41.320749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b31a32c38ef%3A0xa7a38c31c56b04ce!2sBunyodkor%20Avenue%2C%20Tashkent%2C%20Uzbekistan!5e0!3m2!1sen!2sus!4v1650450931744!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="section-title">Ko'p beriladigan savollar</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Lift o'rnatish qancha vaqt oladi?</h3>
+            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Lift o'rnatish muddati loyihaning murakkabligiga va lift turiga qarab 3 haftadan 3 oygacha davom etishi mumkin. Aniq muddatni mutaxassislarimiz ob'ektni ko'rib chiqqandan so'ng aytishadi.
+            </p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Liftlarni texnik xizmat ko'rsatish qanchalik tez-tez o'tkaziladi?</h3>
+            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Xalqaro standartlarga muvofiq, liftlar har oyda kamida bir marta texnik xizmat ko'rsatilishi kerak. Biz har bir mijoz uchun qulay texnik xizmat ko'rsatish rejasini taklif qilamiz.
+            </p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Lifting kafolatli muddati qancha?</h3>
+            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Barcha liftlarimizga standart 2 yillik kafolat beriladi. Bundan tashqari, uzoqroq muddatli kafolat beruvchi qo'shimcha xizmat paketlarini ham taklif qilamiz.
+            </p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Lift o'rnatish uchun qanday hujjatlar talab qilinadi?</h3>
+            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Lift o'rnatish uchun bino loyihasi, texnik talablar va tegishli ruxsatnomalar kerak bo'ladi. Mutaxassislarimiz barcha zarur hujjatlarni tayyorlashda yordam berishadi.
+            </p>
+          </div>
+        </div>
+        
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <h3>Siz qanday to'lov usullarini qabul qilasiz?</h3>
+            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+          </div>
+          <div class="accordion-content">
+            <p>
+              Biz turli xil to'lov usullarini qabul qilamiz, jumladan naqd pul, bank o'tkazmasi va korporativ mijozlar uchun bo'lib to'lash imkoniyati ham mavjud.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Lift o'rnatish bo'yicha bepul konsultatsiya oling</h2>
+        <p class="cta-description">Mutaxassislarimiz sizning talablaringizga mos keladigan eng yaxshi yechimni topishda yordam beradi</p>
+        <a href="tel:+998901234567" class="btn btn-primary">
+          <i class="fas fa-phone"></i> Qo'ng'iroq qilish
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <span class="logo-text">LIFT<span class="highlight">PRO</span></span>
+          </div>
+          <p class="footer-description">Zamonaviy va ishonchli lift yechimlari yetkazib beruvchi yetakchi kompaniya.</p>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Tezkor Havolalar</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Bosh Sahifa</a></li>
+            <li><a href="catalog.html">Katalog</a></li>
+            <li><a href="about.html">Kompaniya Haqida</a></li>
+            <li><a href="contact.html">Bog'lanish</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Bog'lanish</h3>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Toshkent sh., Chilonzor tumani, Bunyodkor ko'chasi, 12-uy</li>
+            <li><i class="fas fa-phone"></i> +998 90 123 45 67</li>
+            <li><i class="fas fa-envelope"></i> info@liftpro.uz</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3 class="footer-title">Ijtimoiy Tarmoqlar</h3>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2025 LIFTPRO. Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <div class="success-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h3 class="modal-title">Xabaringiz yuborildi!</h3>
+      <p class="modal-description">
+        Xabaringiz muvaffaqiyatli yuborildi. Mutaxassislarimiz siz bilan tez orada bog'lanishadi.
+      </p>
+      <button class="btn btn-primary close-success">OK</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>
