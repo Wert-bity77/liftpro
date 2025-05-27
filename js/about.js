@@ -16,6 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
   initAboutPage();
 });
 
+
+function openModal(partner) {
+  if (partner === 'meta') {
+    // Modal oynani ko‘rsatish
+    document.getElementById('modal-content').innerHTML = `
+      <h3>Meta Elevator</h3>
+      <p>Bu kompaniya O'zbekistondagi eng yirik lift yetkazib beruvchilardan biri.</p>
+    `;
+    document.getElementById('modal').style.display = 'block';
+  }
+}
+
+
 /**
  * Initialize about page functionality
  */

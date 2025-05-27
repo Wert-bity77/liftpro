@@ -13,6 +13,8 @@
     <div class="loader"></div>
   </div>
 
+  
+
   <header class="main-header">
     <div class="header-container">
       <div class="logo">
@@ -75,9 +77,41 @@
             <option value="marble">Marmar</option>
           </select>
         </div>
-        <button class="btn btn-primary filter-button" id="apply-filters">
+        <button class="btn btn-primary filter-button" onclick="showFilterInput()">
           <i class="fas fa-filter"></i> Filtrlash
         </button>
+        
+        <input type="text" id="filter-input" placeholder="Lift modelini yozing..." 
+               style="display: none; margin-top: 10px; position: relative; top: 15px;" oninput="filterModels()" />
+               
+        
+        <script>
+          function showFilterInput() {
+            const input = document.getElementById('filter-input');
+            input.style.display = 'block';
+            input.focus();
+          }
+        
+          function filterModels() {
+            const search = document.getElementById('filter-input').value.toLowerCase();
+            const models = document.querySelectorAll('.catalog-item');
+        
+            models.forEach(model => {
+              // Получаем название модели из .item-title
+              const titleElement = model.querySelector('.item-title');
+              if (!titleElement) return;
+        
+              const titleText = titleElement.textContent.toLowerCase();
+        
+              if (titleText.includes(search)) {
+                model.style.display = 'block';
+              } else {
+                model.style.display = 'none';
+              }
+            });
+          }
+        </script>
+        
       </div>
     </div>
   </section>
@@ -88,7 +122,7 @@
         <!-- Model 1 -->
         <div class="catalog-item" id="model1" data-category="premium" data-capacity="medium" data-material="marble">
           <div class="item-image">
-            <img src="img/Schindler 5500 SAO - Dusk Grey.jpg" alt="K-01 Premium" />
+            <img src="img/Schindler 1000 SAO - Dusk Grey.jpg" alt="K-01 Premium" />
             <div class="item-badges">
               <span class="badge premium">Premium</span>
               <span class="badge new">Yangi</span>
@@ -126,7 +160,7 @@
         <!-- Model 2 -->
         <div class="catalog-item" id="model2" data-category="standard" data-capacity="medium" data-material="steel">
           <div class="item-image">
-            <img src="img/Schindler 5500 SAO - Mercury Brushed.jpg" alt="K-02 Modern" />
+            <img src="img/Schindler 1000 SAO - Mercury Brushed.jpg" alt="K-02 Modern" />
             <div class="item-badges">
               <span class="badge standard">Standart</span>
             </div>
@@ -163,7 +197,7 @@
         <!-- Model 3 -->
         <div class="catalog-item" id="model3" data-category="standard" data-capacity="medium" data-material="glass">
           <div class="item-image">
-            <img src="img/Schindler 5500 SAO - Navona Brushed.jpg" alt="K-03 Klassik" />
+            <img src="img/Schindler 3000 AP (0001) - Mercury Hairline.jpg" alt="K-03 Klassik" />
             <div class="item-badges">
               <span class="badge standard">Standart</span>
               <span class="badge bestseller">Bestseller</span>
@@ -201,7 +235,7 @@
         <!-- Model 4 -->
         <div class="catalog-item" id="model4" data-category="premium" data-capacity="large" data-material="glass">
           <div class="item-image">
-            <img src="img/Schindler 5500 SAO + SCG - Glacier Grey Glass.jpg" alt="K-04 Panorama" />
+            <img src="img/Schindler 3000 AP (0002) - Eclipse Black +Lotus White.jpg" alt="K-04 Panorama" />
             <div class="item-badges">
               <span class="badge premium">Premium</span>
             </div>
@@ -238,7 +272,7 @@
         <!-- Model 5 -->
         <div class="catalog-item" id="model5" data-category="economy" data-capacity="small" data-material="steel">
           <div class="item-image">
-            <img src="img/Schindler 3000 + 5000 MR AP (001) - Pearl White + Clove Grey.jpg" alt="K-05 Ekonom" />
+            <img src="img/Schindler 3000 AP (0003) - Flint Linen.jpg" alt="K-05 Ekonom" />
             <div class="item-badges">
               <span class="badge economy">Ekonom</span>
             </div>
@@ -275,7 +309,7 @@
         <!-- Model 6 -->
         <div class="catalog-item" id="model6" data-category="standard" data-capacity="large" data-material="wood">
           <div class="item-image">
-            <img src="img/Schindler 3000 + 5000 MR AP (002) - Penthouse Wood.jpg" alt="K-06 Elegance" />
+            <img src="img/Schindler 3000 AP (0011) - Quartz Glossy + Tamarind Brown.jpg" alt="K-06 Elegance" />
             <div class="item-badges">
               <span class="badge standard">Standart</span>
             </div>
@@ -308,7 +342,957 @@
             </div>
           </div>
         </div>
+        <!-- Model 7 -->
+<div class="catalog-item" id="model7" data-category="premium" data-capacity="medium" data-material="glass">
+  <div class="item-image">
+    <img src="img/Schindler 3000 AP (0012) - Lotus White.jpg" alt="K-07 Crystal" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model7">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-07 Crystal</h3>
+    <p class="item-description">Kristall shisha lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>500 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1000 x 1300 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model7">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model7"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 8 -->
+<div class="catalog-item" id="model8" data-category="standard" data-capacity="small" data-material="steel">
+  <div class="item-image">
+    <img src="img/Schindler 3000 AP (0013) - Jade Green.jpg" alt="K-08 Silver" />
+    <div class="item-badges">
+      <span class="badge standard">Standart</span>
+    </div>
+    <div class="view-360-badge" data-model="model8">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-08 Silver</h3>
+    <p class="item-description">Kichik o‘lchamli po‘lat lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>4 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>350 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>900 x 1100 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model8">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model8"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 9 -->
+<div class="catalog-item" id="model9" data-category="economy" data-capacity="medium" data-material="plastic">
+  <div class="item-image">
+    <img src="img/Schindler 3000 AP (0022) - Fossil Beige + Amazon Green.jpg" alt="K-09 Eco Blue" />
+    <div class="item-badges">
+      <span class="badge economy">Ekonom</span>
+    </div>
+    <div class="view-360-badge" data-model="model9">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-09 Eco Blue</h3>
+    <p class="item-description">Iqtisodiy sinf plastik lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>400 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>950 x 1200 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model9">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model9"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 10 -->
+<div class="catalog-item" id="model10" data-category="premium" data-capacity="large" data-material="marble">
+  <div class="item-image">
+    <img src="img/Schindler 3000 AP (0023) - Cinnamon Wood.jpg" alt="K-10 Marble White" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+    </div>
+    <div class="view-360-badge" data-model="model10">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-10 Marble White</h3>
+    <p class="item-description">Oq marmar panelli katta lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>10 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>800 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1200 x 1500 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model10">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model10"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 11 -->
+<div class="catalog-item" id="model11" data-category="standard" data-capacity="medium" data-material="wood">
+  <div class="item-image">
+    <img src="img/Schindler 3000 AP (0024) - Hibiscus Red + Pearl White Glossy.jpg" alt="K-11 Wood Brown" />
+    <div class="item-badges">
+      <span class="badge standard">Standart</span>
+    </div>
+    <div class="view-360-badge" data-model="model11">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-11 Wood Brown</h3>
+    <p class="item-description">Yog‘och panelga ega lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>8 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>630 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1100 x 1400 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model11">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model11"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 12 -->
+<div class="catalog-item" id="model12" data-category="economy" data-capacity="small" data-material="plastic">
+  <div class="item-image">
+    <img src="img/Schindler 6000 +7000 AP (0024) - Jade Green Glass.jpg" alt="K-12 Eco Green" />
+    <div class="item-badges">
+      <span class="badge economy">Ekonom</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model12">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-12 Eco Green</h3>
+    <p class="item-description">Iqtisodiy sinf yashil plastik kabina</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>4 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>320 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>900 x 1100 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model12">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model12"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 13 -->
+<div class="catalog-item" id="model13" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/Schindler 5000 SAO & SCK - Glacier Grey Glass.jpg" alt="K-13 Marble Grey" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+    </div>
+    <div class="view-360-badge" data-model="model13">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-13 Marble Grey</h3>
+    <p class="item-description">Siyoh marmar panelli lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>8 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>650 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1100 x 1400 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model13">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model13"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 14 -->
+<div class="catalog-item" id="model14" data-category="standard" data-capacity="medium" data-material="steel">
+  <div class="item-image">
+    <img src="img/Schindler_3000_AP_0021_Pacific_Blue_+_Thunder_Grey_Glossy.jpg" alt="K-14 Steel Blue" />
+    <div class="item-badges">
+      <span class="badge standard">Standart</span>
+    </div>
+    <div class="view-360-badge" data-model="model14">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-14 Steel Blue</h3>
+    <p class="item-description">Po‘lat ko‘k rang lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>500 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1000 x 1300 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model14">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model14"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 15 -->
+<div class="catalog-item" id="model15" data-category="economy" data-capacity="small" data-material="plastic">
+  <div class="item-image">
+    <img src="img/Schindler 5000+5000 MR AP (0023) - Hibiscus Red+Pearl White.jpg" alt="K-15 Eco Red" />
+    <div class="item-badges">
+      <span class="badge economy">Ekonom</span>
+    </div>
+    <div class="view-360-badge" data-model="model15">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-15 Eco Red</h3>
+    <p class="item-description">Qizil plastik kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>4 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>320 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>900 x 1100 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model15">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model15"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 16 -->
+<div class="catalog-item" id="model16" data-category="premium" data-capacity="large" data-material="glass">
+  <div class="item-image">
+    <img src="img/Schindler 6000 +7000 AP (0003) - Eclipse Black + Pearl White.jpg" alt="K-16 Glass Black" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model16">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-16 Glass Black</h3>
+    <p class="item-description">Qora shisha panelli lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>10 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>800 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1200 x 1500 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model16">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model16"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 17 -->
+<div class="catalog-item" id="model17" data-category="standard" data-capacity="medium" data-material="steel">
+  <div class="item-image">
+    <img src="img/Schindler 6000 +7000 AP (0033) - Jade Green + Forest Green.jpg" alt="K-17 Steel Grey" />
+    <div class="item-badges">
+      <span class="badge standard">Standart</span>
+    </div>
+    <div class="view-360-badge" data-model="model17">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-17 Steel Grey</h3>
+    <p class="item-description">Kulrang po‘lat panelli kabina</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>500 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1000 x 1300 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model17">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model17"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 18 -->
+<div class="catalog-item" id="model18" data-category="economy" data-capacity="small" data-material="plastic">
+  <div class="item-image">
+    <img src="img/Schindler 5000+5000 MR AP (0013) - Lotus White.jpg" alt="K-18 Eco White" />
+    <div class="item-badges">
+      <span class="badge economy">Ekonom</span>
+    </div>
+    <div class="view-360-badge" data-model="model18">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-18 Eco White</h3>
+    <p class="item-description">Oq plastik lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>4 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>320 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>900 x 1100 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model18">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model18"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 19 -->
+<div class="catalog-item" id="model19" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/Schindler_6000_+7000_AP_0012_Pampas_Beige_+_Silk_White_Glass.jpg" alt="K-19 Marble Beige" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+    </div>
+    <div class="view-360-badge" data-model="model19">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-19 Marble Beige</h3>
+    <p class="item-description">Bej marmar panelli kabina</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>8 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>650 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1100 x 1400 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model19">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model19"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+
+<!-- Model 20 -->
+<div class="catalog-item" id="model20" data-category="standard" data-capacity="medium" data-material="steel">
+  <div class="item-image">
+    <img src="img/Schindler 3000 AP (0002) - Eclipse Black +Lotus White.jpg" alt="K-20 Steel Black" />
+    <div class="item-badges">
+      <span class="badge standard">Standart</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model20">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-20 Steel Black</h3>
+    <p class="item-description">Qora po‘lat panelli kabina</p>
+    <div class="item-specs">
+      <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
+      <div class="spec"><i class="fas fa-weight-hanging"></i><span>500 kg</span></div>
+      <div class="spec"><i class="fas fa-ruler-combined"></i><span>1000 x 1300 mm</span></div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model20">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model20"><i class="fas fa-qrcode"></i> QR</button>
+    </div>
+  </div>
+</div>
+<div class="catalog-item" id="model21" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-21.jpg" alt="K-21 Premium" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model21">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-21 Premium</h3>
+    <p class="item-description">Yangi dizaynli premium lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
       </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model21">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model21">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model22" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-22.jpg" alt="K-22 Premium" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model22">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-22</h3>
+    <p class="item-description">Zamonaviy uslubdagi lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model22">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model22">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model23" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-23.jpg" alt="K-23 Premium" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model23">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-23</h3>
+    <p class="item-description">Foydali va qulay dizayn</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model23">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model23">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model24" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-24.jpg" alt="K-24 Premium" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model24">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-24</h3>
+    <p class="item-description">Qulaylik va zamonaviylik uyg‘unligi</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model24">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model24">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model25" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-25.jpg" alt="K-25 Premium" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model25">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-25 </h3>
+    <p class="item-description">Keng va yorqin ichki makon</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model25">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model25">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model26" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-26.jpg" alt="K-26 Premium" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model26">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-26 </h3>
+    <p class="item-description">Minimalistik va nafis dizayn</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model26">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model26">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model27" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-27.jpg" alt="K-27 Premium" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model27">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-27</h3>
+    <p class="item-description">Mukammal yoritilgan interyer</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model27">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model27">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model28" data-category="premium" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-28.jpg" alt="K-28 Premium" />
+    <div class="item-badges">
+      <span class="badge premium">Premium</span>
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model28">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-28</h3>
+    <p class="item-description">Tinchlik va xotirjamlik uyg‘unligi</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model28">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model28">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model29" data-category="standard" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-29.jpg" alt="K-29" />
+    <div class="item-badges">
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model29">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-29</h3>
+    <p class="item-description">Yuqori sifatli va zamonaviy lift kabinasi</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model29">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model29">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model30" data-category="standard" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-30.jpg" alt="K-30" />
+    <div class="item-badges">
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model30">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-30</h3>
+    <p class="item-description">Mustahkam va chiroyli dizayn</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model30">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model30">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model31" data-category="standard" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-31.jpg" alt="K-31" />
+    <div class="item-badges">
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model31">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-31</h3>
+    <p class="item-description">Elegant va funksional kabina</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model31">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model31">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model32" data-category="standard" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-32.jpg" alt="K-32" />
+    <div class="item-badges">
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model32">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-32</h3>
+    <p class="item-description">Sifat va uslub uyg‘unligi</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model32">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model32">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model33" data-category="standard" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-33.jpg" alt="K-33" />
+    <div class="item-badges">
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model33">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-33</h3>
+    <p class="item-description">Innovatsion yechimlar bilan</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model33">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model33">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model34" data-category="standard" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-34.jpg" alt="K-34" />
+    <div class="item-badges">
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model34">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-34</h3>
+    <p class="item-description">Estetik va qulay kabina</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model34">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model34">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model35" data-category="standard" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-35.jpg" alt="K-35" />
+    <div class="item-badges">
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model35">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-35</h3>
+    <p class="item-description">Yuqori texnologiyali kabina</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model35">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model35">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="catalog-item" id="model36" data-category="standard" data-capacity="medium" data-material="marble">
+  <div class="item-image">
+    <img src="img/K-36.jpg" alt="K-36" />
+    <div class="item-badges">
+      <span class="badge new">Yangi</span>
+    </div>
+    <div class="view-360-badge" data-model="model36">
+      <i class="fas fa-360-degrees"></i>
+    </div>
+  </div>
+  <div class="item-details">
+    <h3 class="item-title">K-36</h3>
+    <p class="item-description">Zamonaviy va chidamli kabina</p>
+    <div class="item-specs">
+      <div class="spec">
+        <i class="fas fa-users"></i>
+        <span>8 kishi</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-weight-hanging"></i>
+        <span>630 kg</span>
+      </div>
+      <div class="spec">
+        <i class="fas fa-ruler-combined"></i>
+        <span>1100 x 1400 mm</span>
+      </div>
+    </div>
+    <div class="item-actions">
+      <button class="btn btn-primary view-details-btn" data-model="model36">Batafsil</button>
+      <button class="btn btn-outline qr-btn" data-model="model36">
+        <i class="fas fa-qrcode"></i> QR
+      </button>
+    </div>
+  </div>
+</div>
+
     </div>
   </section>
 
@@ -317,14 +1301,17 @@
       <div class="pagination-controls">
         <a href="#" class="pagination-prev disabled"><i class="fas fa-chevron-left"></i></a>
         <div class="pagination-numbers">
-          <a href="#" class="pagination-number active">1</a>
-          <a href="#" class="pagination-number">2</a>
-          <a href="#" class="pagination-number">3</a>
+          <a href="#" class="pagination-number active" data-page="1">1</a>
+          <a href="#" class="pagination-number" data-page="2">2</a>
+          <a href="#" class="pagination-number" data-page="3">3</a>
         </div>
         <a href="#" class="pagination-next"><i class="fas fa-chevron-right"></i></a>
       </div>
     </div>
   </div>
+  
+
+  
 
   <section class="cta">
     <div class="container">

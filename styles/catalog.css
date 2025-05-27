@@ -1,6 +1,4 @@
-/* Catalog Page Specific Styles */
 
-/* === CATALOG FILTERS === */
 .catalog-filters {
   padding: var(--spacing-lg) 0;
   background-color: var(--white-color);
@@ -14,6 +12,23 @@
   align-items: center;
   gap: var(--spacing-md);
 }
+
+#filter-input {
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.lift-box {
+  background: #f5f5f5;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
 
 .filter-group {
   display: flex;
