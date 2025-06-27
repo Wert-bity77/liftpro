@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schindler Obyektlar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/obyekt.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader-container">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="view-360.html">
+                    <div class="logo-container">
+                      <img src="img/schindler.png" alt="Schindler Logo" class="logo-img" />
+
+                    </div>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
+                    <li class="nav-item"><a href="catalog.html" class="nav-link">Katalog</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">Kompaniya Haqida</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Bog'lanish</a></li>
+                    <li class="nav-item"><a href="obyekt.html" class="nav-link active">Obyektlar</a></li>
+                </ul>
+
+                <div class="language-selector">
+                  <select id="language-select" class="language-dropdown">
+                    <option value="uz">O'ZB</option>
+                    <option value="ru">РУС</option>
+                    <option value="en">ENG</option>
+                  </select>
+                </div>
+            </nav>
+            
+            <div class="menu-toggle">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </div>
+        </div>
+    </header>
+   
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Bizning Obyektlar</h1>
+                <p class="page-subtitle">Schindler sifati bilan jihozlangan zamonaviy binolar</p>
+                <div class="title-decoration"></div>
+            </div>
+
+      <!-- faqat obyekt-card qismlari to‘liq yangilandi -->
+<!-- HTML boshlanishi siz bergandek qoldirildi -->
+
+<!-- Project 1 -->
+<div class="obyekt-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="obyekt-img-wrapper">
+      <img src="img/Tawkent.jpg" alt="Toshkent obyekti" class="obyekt-img">
+      <div class="img-overlay">
+        <div class="overlay-content">
+          <i class="fas fa-eye"></i>
+          <span>Ko'rish</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="obyekt-content">
+      <div class="project-badge">Tugatilgan</div>
+      <h3 class="obyekt-title">Toshkent Business Center</h3>
+      <p class="obyekt-description">
+        Ushbu obyektda Schindler liftlari o'rnatilgan. 
+        Yevropa sifati, zamonaviy dizayn va to'liq xavfsizlik bilan ta'minlangan tizim.
+      </p>
+  
+      <div class="project-stats">
+        <div class="stat-item">
+          <i class="fas fa-building"></i>
+          <span class="ka">15 qavat</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-elevator"></i>
+          <span class="ka">4 ta lift</span>
+        </div>
+      </div>
+  
+      <div class="buttons">
+        <button class="btn btn-primary show-details"
+          data-title="Toshkent Business Center"
+          data-description="Ushbu obyektda Schindler liftlari o'rnatilgan. Yevropa sifati, zamonaviy dizayn va to'liq xavfsizlik bilan ta'minlangan tizim."
+          data-specs="<strong>Qavatlar:</strong> 15<br><strong>Liftlar:</strong> 4 ta">
+          <i class="fas fa-info-circle"></i>
+          Batafsil
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Project 2 -->
+  <div class="obyekt-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="obyekt-img-wrapper">
+      <img src="img/mall.jpg" alt="Mall obyekti" class="obyekt-img">
+      <div class="img-overlay">
+        <div class="overlay-content">
+          <i class="fas fa-eye"></i>
+          <span>Ko'rish</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="obyekt-content">
+      <div class="project-badge">Jarayonda</div>
+      <h3 class="obyekt-title">Toshkent Mall</h3>
+      <p class="obyekt-description">
+        Schindler kompaniyasi liftlarni Yevropa sifatida va zamonaviy xavfsizlik standartlariga mos ravishda taqdim etadi.
+        Piramit kompaniysi bilan hamkorlikda amalga oshirilgan loyiha.
+      </p>
+  
+      <div class="project-stats">
+        <div class="stat-item">
+          <i class="fas fa-building"></i>
+          <span class="ka">8 qavat</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-elevator"></i>
+          <span class="ka">6 ta lift</span>
+        </div>
+      </div>
+  
+      <div class="buttons">
+        <button class="btn btn-primary show-details"
+          data-title="Toshkent Mall"
+          data-description="Schindler kompaniyasi liftlarni Yevropa sifatida va zamonaviy xavfsizlik standartlariga mos ravishda taqdim etadi. Piramit kompaniyasi bilan hamkorlikda amalga oshirilgan loyiha."
+          data-specs="<strong>Qavatlar:</strong> 8<br><strong>Liftlar:</strong> 6 ta">
+          <i class="fas fa-info-circle"></i>
+          Batafsil
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Project 3 -->
+  <div class="obyekt-card" data-aos="fade-up" data-aos-delay="300">
+    <div class="obyekt-img-wrapper">
+      <img src="img/piramit.jpg" alt="Piramit obyekti" class="obyekt-img">
+      <div class="img-overlay">
+        <div class="overlay-content">
+          <i class="fas fa-eye"></i>
+          <span>Ko'rish</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="obyekt-content">
+      <div class="project-badge">Tugatilgan</div>
+      <h3 class="obyekt-title">Piramit Majmuasi</h3>
+      <p class="obyekt-description">
+        Siz ko'rayotgan ushbu majmuada Schindler kompaniyasi 2 yildan beri to'xtovsiz ishlamoqda.
+        Bu yerda zamonaviy oddiy lift va Germaniya modelidagi liftlarni ko'rishingiz mumkin.
+      </p>
+  
+      <div class="project-stats">
+        <div class="stat-item">
+          <i class="fas fa-building"></i>
+          <span class="ka">12 qavat</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-elevator"></i>
+          <span class="ka">3 ta lift</span>
+        </div>
+      </div>
+  
+      <div class="buttons">
+        <button class="btn btn-primary show-details"
+          data-title="Piramit Majmuasi"
+          data-description="Siz ko'rayotgan ushbu majmuada Schindler kompaniyasi 2 yildan beri to'xtovsiz ishlamoqda. Bu yerda zamonaviy oddiy lift va Germaniya modelidagi liftlarni ko'rishingiz mumkin."
+          data-specs="<strong>Qavatlar:</strong> 12<br><strong>Liftlar:</strong> 3 ta">
+          <i class="fas fa-info-circle"></i>
+          Batafsil
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Project 4 -->
+  <div class="obyekt-card" data-aos="fade-up" data-aos-delay="400">
+    <div class="obyekt-img-wrapper">
+      <img src="https://www.afisha.uz/uploads/media/2018/05/0977561_m.png" alt="Golden House obyekti" class="obyekt-img">
+      <div class="img-overlay">
+        <div class="overlay-content">
+          <i class="fas fa-eye"></i>
+          <span>Ko'rish</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="obyekt-content">
+      <div class="project-badge premium">Premium</div>
+      <h3 class="obyekt-title">Golden House</h3>
+      <p class="obyekt-description">
+        Bu obyekt Schindler liftlari bilan Golden House kompaniyasi hamkorligida amalga oshirilgan.
+        Schindler ishonchli zamonaviy liftlarni o'rnatgan.
+      </p>
+  
+      <div class="project-stats">
+        <div class="stat-item">
+          <i class="fas fa-building"></i>
+          <span class="ka">20 qavat</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-elevator"></i>
+          <span class="ka">8 ta lift</span>
+        </div>
+      </div>
+  
+      <div class="buttons">
+        <button class="btn btn-primary show-details"
+          data-title="Golden House"
+          data-description="Bu obyekt Schindler liftlari bilan Golden House kompaniyasi hamkorligida amalga oshirilgan. Schindler ishonchli zamonaviy liftlarni o'rnatgan."
+          data-specs="<strong>Qavatlar:</strong> 20<br><strong>Liftlar:</strong> 8 ta">
+          <i class="fas fa-info-circle"></i>
+          Batafsil
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal oynasi -->
+  <div id="detailsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+      <div id="modalSpecs"></div>
+    </div>
+  </div>
+  
+  
+            <!-- Call to Action -->
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2>Sizning loyihangiz uchun professional yechim?</h2>
+                    <p>Biz bilan bog'laning va eng yaxshi taklifni oling</p>
+                    <button class="btn btn-cta">
+                        <i class="fas fa-phone"><a href=""></a></i>
+                        <a class="ss" href="contact.html">Boglanish</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Modal oynasi -->
+
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/obyekt.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/language.js"></script>
+</body>
+</html>

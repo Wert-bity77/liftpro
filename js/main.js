@@ -10,7 +10,6 @@ const mainNav = document.querySelector('.main-nav');
 const header = document.querySelector('.main-header');
 const modals = document.querySelectorAll('.modal');
 const closeModalButtons = document.querySelectorAll('.close-modal');
-
 // Page load handler
 document.addEventListener('DOMContentLoaded', () => {
   // Remove loader after page load

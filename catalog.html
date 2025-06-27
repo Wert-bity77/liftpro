@@ -16,16 +16,28 @@
     <div class="header-container">
       <div class="logo">
         <a href="index.html">
-          <span class="logo-text">Schndler.<span class="highlight">Uz</span></span>
+          <div class="logo-container">
+            <img src="img/schindler.png" alt="Schindler Logo" class="logo-img" />
+          </div>
         </a>
       </div>
       <nav class="main-nav">
+        <div class="language-selector">
+          <select id="language-select" class="language-dropdown">
+            <option value="uz">O'ZB</option>
+            <option value="ru">РУС</option>
+            <option value="en">ENG</option>
+          </select>
+        </div>
         <ul class="nav-list">
           <li class="nav-item"><a href="index.html" class="nav-link">Bosh Sahifa</a></li>
           <li class="nav-item"><a href="catalog.html" class="nav-link active">Katalog</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">Kompaniya Haqida</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Bog'lanish</a></li>
+          <li class="nav-item"><a href="obyekt.html" class="nav-link">Obyekt</a></li>
+        
         </ul>
+      
       </nav>
       <div class="menu-toggle">
         <i class="fas fa-bars"></i>
@@ -37,7 +49,6 @@
     <div class="container">
       <h1 class="page-title">Lift Kabinalari Katalogi</h1>
       <div class="breadcrumbs">
-        <a href="index.html">Bosh Sahifa</a> / <span>Katalog</span>
       </div>
     </div>
     
@@ -117,9 +128,24 @@
     <div class="container">
       <div class="catalog-grid" id="catalog-items">
         <!-- Model 1 -->
+       
+        
+        
+
+<!-- Modal oynasi -->
+<div id="detailsModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDescription"></p>
+    <div id="modalSpecs"></div>
+  </div>
+</div>
+
+
         <div class="catalog-item" id="model1" data-category="premium" data-capacity="medium" data-material="marble">
           <div class="item-image">
-            <img src="img/Schindler 1000 SAO - Dusk Grey.jpg" alt="K-01 Premium" />
+            <img src="img/Schindler 1000 SAO - Dusk Grey.jpg" alt="K-02 Premium" />
             <div class="item-badges">
               <span class="badge premium">Premium</span>
               <span class="badge new">Yangi</span>
@@ -129,8 +155,9 @@
             </div>
           </div>
           <div class="item-details">
-            <h3 class="item-title">K-01 Premium</h3>
+            <h3 class="item-title">K-02 Premium</h3>
             <p class="item-description">Qora marmar panelli premium lift kabinasi</p>
+            <a href="modal2.html">360</a>
             <div class="item-specs">
               <div class="spec">
                 <i class="fas fa-users"></i>
@@ -147,50 +174,9 @@
             </div>
             <div class="item-actions">
               <button class="btn btn-primary view-details-btn" data-model="model1">Batafsil</button>
-              <button class="btn btn-outline qr-btn" data-model="model1">
-                <i class="fas fa-qrcode"></i> QR
-              </button>
             </div>
           </div>
         </div>
-
-        <!-- Model 2 -->
-        <div class="catalog-item" id="model2" data-category="standard" data-capacity="medium" data-material="steel">
-          <div class="item-image">
-            <img src="img/Schindler 1000 SAO - Mercury Brushed.jpg" alt="K-02 Modern" />
-            <div class="item-badges">
-              <span class="badge standard">Standart</span>
-            </div>
-            <div class="view-360-badge" data-model="model2">
-              <i class="fas fa-360-degrees"></i>
-            </div>
-          </div>
-          <div class="item-details">
-            <h3 class="item-title">K-02 Modern</h3>
-            <p class="item-description">Metall panelli zamonaviy lift kabinasi</p>
-            <div class="item-specs">
-              <div class="spec">
-                <i class="fas fa-users"></i>
-                <span>6 kishi</span>
-              </div>
-              <div class="spec">
-                <i class="fas fa-weight-hanging"></i>
-                <span>450 kg</span>
-              </div>
-              <div class="spec">
-                <i class="fas fa-ruler-combined"></i>
-                <span>1000 x 1250 mm</span>
-              </div>
-            </div>
-            <div class="item-actions">
-              <button class="btn btn-primary view-details-btn" data-model="model2">Batafsil</button>
-              <button class="btn btn-outline qr-btn" data-model="model2">
-                <i class="fas fa-qrcode"></i> QR
-              </button>
-            </div>
-          </div>
-        </div>
-
         <!-- Model 3 -->
         <div class="catalog-item" id="model3" data-category="standard" data-capacity="medium" data-material="glass">
           <div class="item-image">
@@ -206,6 +192,7 @@
           <div class="item-details">
             <h3 class="item-title">K-03 Klassik</h3>
             <p class="item-description">Klassik dizayndagi lift kabinasi</p>
+            <a href="modal3.html">360</a>
             <div class="item-specs">
               <div class="spec">
                 <i class="fas fa-users"></i>
@@ -222,8 +209,6 @@
             </div>
             <div class="item-actions">
               <button class="btn btn-primary view-details-btn" data-model="model3">Batafsil</button>
-              <button class="btn btn-outline qr-btn" data-model="model3">
-                <i class="fas fa-qrcode"></i> QR
               </button>
             </div>
           </div>
@@ -243,6 +228,7 @@
           <div class="item-details">
             <h3 class="item-title">K-04 Panorama</h3>
             <p class="item-description">Panoramali shisha lift kabinasi</p>
+            <a href="modal4.html">360</a>
             <div class="item-specs">
               <div class="spec">
                 <i class="fas fa-users"></i>
@@ -259,8 +245,6 @@
             </div>
             <div class="item-actions">
               <button class="btn btn-primary view-details-btn" data-model="model4">Batafsil</button>
-              <button class="btn btn-outline qr-btn" data-model="model4">
-                <i class="fas fa-qrcode"></i> QR
               </button>
             </div>
           </div>
@@ -280,6 +264,7 @@
           <div class="item-details">
             <h3 class="item-title">K-05 Ekonom</h3>
             <p class="item-description">Iqtisodiy sinfga mansub lift kabinasi</p>
+            <a href="modal5.html">360</a>
             <div class="item-specs">
               <div class="spec">
                 <i class="fas fa-users"></i>
@@ -296,8 +281,6 @@
             </div>
             <div class="item-actions">
               <button class="btn btn-primary view-details-btn" data-model="model5">Batafsil</button>
-              <button class="btn btn-outline qr-btn" data-model="model5">
-                <i class="fas fa-qrcode"></i> QR
               </button>
             </div>
           </div>
@@ -317,6 +300,7 @@
           <div class="item-details">
             <h3 class="item-title">K-06 Elegance</h3>
             <p class="item-description">Yog'och panelli elegent lift kabinasi</p>
+            <a href="modal6.html">360</a>
             <div class="item-specs">
               <div class="spec">
                 <i class="fas fa-users"></i>
@@ -333,8 +317,6 @@
             </div>
             <div class="item-actions">
               <button class="btn btn-primary view-details-btn" data-model="model6">Batafsil</button>
-              <button class="btn btn-outline qr-btn" data-model="model6">
-                <i class="fas fa-qrcode"></i> QR
               </button>
             </div>
           </div>
@@ -352,8 +334,9 @@
     </div>
   </div>
   <div class="item-details">
-    <h3 class="item-title">K-07 Crystal</h3>
-    <p class="item-description">Kristall shisha lift kabinasi</p>
+    <h3 class="item-title">K-07 Ewak</h3>
+    <p class="item-description">Ewak shisha lift kabinasi</p>
+    <a href="modal7.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>500 kg</span></div>
@@ -361,7 +344,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model7">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model7"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -380,6 +362,7 @@
   <div class="item-details">
     <h3 class="item-title">K-08 Silver</h3>
     <p class="item-description">Kichik o‘lchamli po‘lat lift kabinasi</p>
+    <a href="modal8.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>4 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>350 kg</span></div>
@@ -387,7 +370,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model8">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model8"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -406,6 +388,7 @@
   <div class="item-details">
     <h3 class="item-title">K-09 Eco Blue</h3>
     <p class="item-description">Iqtisodiy sinf plastik lift kabinasi</p>
+    <a href="modal9.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>400 kg</span></div>
@@ -413,7 +396,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model9">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model9"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -432,6 +414,7 @@
   <div class="item-details">
     <h3 class="item-title">K-10 Marble White</h3>
     <p class="item-description">Oq marmar panelli katta lift kabinasi</p>
+    <a href="modal10.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>10 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>800 kg</span></div>
@@ -439,7 +422,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model10">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model10"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -458,6 +440,7 @@
   <div class="item-details">
     <h3 class="item-title">K-11 Wood Brown</h3>
     <p class="item-description">Yog‘och panelga ega lift kabinasi</p>
+    <a href="modal11.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>8 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>630 kg</span></div>
@@ -465,7 +448,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model11">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model11"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -485,6 +467,7 @@
   <div class="item-details">
     <h3 class="item-title">K-12 Eco Green</h3>
     <p class="item-description">Iqtisodiy sinf yashil plastik kabina</p>
+    <a href="modal12.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>4 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>320 kg</span></div>
@@ -492,7 +475,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model12">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model12"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -511,6 +493,7 @@
   <div class="item-details">
     <h3 class="item-title">K-13 Marble Grey</h3>
     <p class="item-description">Siyoh marmar panelli lift kabinasi</p>
+    <a href="modal13.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>8 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>650 kg</span></div>
@@ -518,7 +501,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model13">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model13"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -537,6 +519,7 @@
   <div class="item-details">
     <h3 class="item-title">K-14 Steel Blue</h3>
     <p class="item-description">Po‘lat ko‘k rang lift kabinasi</p>
+    <a href="modal14.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>500 kg</span></div>
@@ -544,7 +527,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model14">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model14"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -563,6 +545,7 @@
   <div class="item-details">
     <h3 class="item-title">K-15 Eco Red</h3>
     <p class="item-description">Qizil plastik kabinasi</p>
+    <a href="modal15.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>4 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>320 kg</span></div>
@@ -570,7 +553,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model15">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model15"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -590,6 +572,7 @@
   <div class="item-details">
     <h3 class="item-title">K-16 Glass Black</h3>
     <p class="item-description">Qora shisha panelli lift kabinasi</p>
+    <a href="modal16.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>10 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>800 kg</span></div>
@@ -597,7 +580,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model16">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model16"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -616,6 +598,7 @@
   <div class="item-details">
     <h3 class="item-title">K-17 Steel Grey</h3>
     <p class="item-description">Kulrang po‘lat panelli kabina</p>
+    <a href="modal17.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>500 kg</span></div>
@@ -623,7 +606,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model17">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model17"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -642,6 +624,7 @@
   <div class="item-details">
     <h3 class="item-title">K-18 Eco White</h3>
     <p class="item-description">Oq plastik lift kabinasi</p>
+    <a href="modal18.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>4 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>320 kg</span></div>
@@ -649,7 +632,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model18">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model18"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -668,6 +650,7 @@
   <div class="item-details">
     <h3 class="item-title">K-19 Marble Beige</h3>
     <p class="item-description">Bej marmar panelli kabina</p>
+    <a href="modal19.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>8 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>650 kg</span></div>
@@ -675,7 +658,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model19">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model19"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -695,6 +677,7 @@
   <div class="item-details">
     <h3 class="item-title">K-20 Steel Black</h3>
     <p class="item-description">Qora po‘lat panelli kabina</p>
+    <a href="modal20.html">360</a>
     <div class="item-specs">
       <div class="spec"><i class="fas fa-users"></i><span>6 kishi</span></div>
       <div class="spec"><i class="fas fa-weight-hanging"></i><span>500 kg</span></div>
@@ -702,7 +685,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model20">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model20"><i class="fas fa-qrcode"></i> QR</button>
     </div>
   </div>
 </div>
@@ -720,6 +702,7 @@
   <div class="item-details">
     <h3 class="item-title">K-21 Premium</h3>
     <p class="item-description">Yangi dizaynli premium lift kabinasi</p>
+    <a href="modal21.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -736,8 +719,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model21">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model21">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -757,6 +738,7 @@
   <div class="item-details">
     <h3 class="item-title">K-22</h3>
     <p class="item-description">Zamonaviy uslubdagi lift kabinasi</p>
+    <a href="modal22.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -773,8 +755,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model22">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model22">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -794,6 +774,7 @@
   <div class="item-details">
     <h3 class="item-title">K-23</h3>
     <p class="item-description">Foydali va qulay dizayn</p>
+    <a href="modal23.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -810,8 +791,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model23">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model23">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -831,6 +810,7 @@
   <div class="item-details">
     <h3 class="item-title">K-24</h3>
     <p class="item-description">Qulaylik va zamonaviylik uyg‘unligi</p>
+    <a href="modal24.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -847,8 +827,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model24">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model24">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -868,6 +846,7 @@
   <div class="item-details">
     <h3 class="item-title">K-25 </h3>
     <p class="item-description">Keng va yorqin ichki makon</p>
+    <a href="modal25.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -884,8 +863,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model25">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model25">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -905,6 +882,7 @@
   <div class="item-details">
     <h3 class="item-title">K-26 </h3>
     <p class="item-description">Minimalistik va nafis dizayn</p>
+    <a href="modal26.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -921,8 +899,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model26">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model26">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -942,6 +918,7 @@
   <div class="item-details">
     <h3 class="item-title">K-27</h3>
     <p class="item-description">Mukammal yoritilgan interyer</p>
+    <a href="modal27.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -958,8 +935,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model27">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model27">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -979,6 +954,7 @@
   <div class="item-details">
     <h3 class="item-title">K-28</h3>
     <p class="item-description">Tinchlik va xotirjamlik uyg‘unligi</p>
+    <a href="modal28.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -995,8 +971,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model28">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model28">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -1015,6 +989,7 @@
   <div class="item-details">
     <h3 class="item-title">K-29</h3>
     <p class="item-description">Yuqori sifatli va zamonaviy lift kabinasi</p>
+    <a href="modal29.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -1031,8 +1006,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model29">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model29">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -1051,6 +1024,7 @@
   <div class="item-details">
     <h3 class="item-title">K-30</h3>
     <p class="item-description">Mustahkam va chiroyli dizayn</p>
+    <a href="modal30.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -1067,8 +1041,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model30">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model30">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -1087,6 +1059,7 @@
   <div class="item-details">
     <h3 class="item-title">K-31</h3>
     <p class="item-description">Elegant va funksional kabina</p>
+    <a href="modal31.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -1103,8 +1076,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model31">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model31">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -1123,6 +1094,7 @@
   <div class="item-details">
     <h3 class="item-title">K-32</h3>
     <p class="item-description">Sifat va uslub uyg‘unligi</p>
+    <a href="modal32.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -1139,12 +1111,11 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model32">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model32">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
 </div>
+
 
 <div class="catalog-item" id="model33" data-category="standard" data-capacity="medium" data-material="marble">
   <div class="item-image">
@@ -1159,6 +1130,7 @@
   <div class="item-details">
     <h3 class="item-title">K-33</h3>
     <p class="item-description">Innovatsion yechimlar bilan</p>
+    <a href="modal33.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -1175,8 +1147,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model33">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model33">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -1195,6 +1165,7 @@
   <div class="item-details">
     <h3 class="item-title">K-34</h3>
     <p class="item-description">Estetik va qulay kabina</p>
+        <a href="modal34.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -1211,8 +1182,6 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model34">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model34">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
@@ -1231,6 +1200,7 @@
   <div class="item-details">
     <h3 class="item-title">K-35</h3>
     <p class="item-description">Yuqori texnologiyali kabina</p>
+    <a href="modal35.html">360</a>
     <div class="item-specs">
       <div class="spec">
         <i class="fas fa-users"></i>
@@ -1247,65 +1217,50 @@
     </div>
     <div class="item-actions">
       <button class="btn btn-primary view-details-btn" data-model="model35">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model35">
-        <i class="fas fa-qrcode"></i> QR
       </button>
     </div>
   </div>
 </div>
 
-<div class="catalog-item" id="model36" data-category="standard" data-capacity="medium" data-material="marble">
-  <div class="item-image">
-    <img src="img/Schindler 6000 +7000 AP (0022) - Bamboo Brown.jpg" alt="K-36" />
-    <div class="item-badges">
-      <span class="badge new">Yangi</span>
+  <div class="catalog-item" id="model36" data-category="standard" data-capacity="medium" data-material="marble">
+    <div class="item-image">
+      <img src="img/Schindler 6000 +7000 AP (0022) - Bamboo Brown.jpg" alt="K-36" />
+      <div class="item-badges">
+        <span class="badge new">Yangi</span>
+      </div>
+      <div class="view-360-badge" data-model="model36">
+        <i class="fas fa-360-degrees"></i>
+      </div>
     </div>
-    <div class="view-360-badge" data-model="model36">
-      <i class="fas fa-360-degrees"></i>
+    <div class="item-details">
+      <h3 class="item-title">K-36</h3>
+      <p class="item-description">Zamonaviy va chidamli kabina</p>
+      <a href="modal36.html">360</a>
+      <div class="item-specs">
+        <div class="spec">
+          <i class="fas fa-users"></i>
+          <span>8 kishi</span>
+        </div>
+        <div class="spec">
+          <i class="fas fa-weight-hanging"></i>
+          <span>630 kg</span>
+        </div>
+        <div class="spec">
+          <i class="fas fa-ruler-combined"></i>
+          <span>1100 x 1400 mm</span>
+        </div>
+      </div>
+      <div class="item-actions">
+        <button class="btn btn-primary view-details-btn" data-model="model36">Batafsil</button>
+        </button>
+      </div>
     </div>
   </div>
-  <div class="item-details">
-    <h3 class="item-title">K-36</h3>
-    <p class="item-description">Zamonaviy va chidamli kabina</p>
-    <div class="item-specs">
-      <div class="spec">
-        <i class="fas fa-users"></i>
-        <span>8 kishi</span>
-      </div>
-      <div class="spec">
-        <i class="fas fa-weight-hanging"></i>
-        <span>630 kg</span>
-      </div>
-      <div class="spec">
-        <i class="fas fa-ruler-combined"></i>
-        <span>1100 x 1400 mm</span>
-      </div>
-    </div>
-    <div class="item-actions">
-      <button class="btn btn-primary view-details-btn" data-model="model36">Batafsil</button>
-      <button class="btn btn-outline qr-btn" data-model="model36">
-        <i class="fas fa-qrcode"></i> QR
-      </button>
-    </div>
-  </div>
-</div>
 
     </div>
   </section>
 
-  <div class="pagination">
-    <div class="container">
-      <div class="pagination-controls">
-        <a href="#" class="pagination-prev disabled"><i class="fas fa-chevron-left"></i></a>
-        <div class="pagination-numbers">
-          <a href="#" class="pagination-number active" data-page="1">1</a>
-          <a href="#" class="pagination-number" data-page="2">2</a>
-          <a href="#" class="pagination-number" data-page="3">3</a>
-        </div>
-        <a href="#" class="pagination-next"><i class="fas fa-chevron-right"></i></a>
-      </div>
-    </div>
-  </div>
+ 
   
 
   
@@ -1336,13 +1291,15 @@
             <li><a href="catalog.html">Katalog</a></li>
             <li><a href="about.html">Kompaniya Haqida</a></li>
             <li><a href="contact.html">Bog'lanish</a></li>
+            <li><a href="obyekt.html">Obyekt</a></li>
+
           </ul>
         </div>
         <div class="footer-column">
           <h3 class="footer-title">Bog'lanish</h3>
           <ul class="contact-info">
             <li><i class="fas fa-map-marker-alt"></i> Toshkent sh., Chilonzor tumani, Bunyodkor ko'chasi, 12-uy</li>
-            <li><i class="fas fa-phone"></i> +998 90 123 45 67</li>
+            <li><i class="fas fa-phone"></i> +998 91 014 70 70</li>
             <li><i class="fas fa-envelope"></i> info@liftpro.uz</li>
           </ul>
         </div>
@@ -1361,128 +1318,12 @@
       </div>
     </div>
   </footer>
-
-  <div id="model-details-modal" class="modal">
-    <div class="modal-content model-details-content">
-      <span class="close-modal">&times;</span>
-      <div class="model-details-container">
-        <div class="model-gallery">
-          <div class="main-image">
-            <img id="modal-main-image" src="" alt="Lift modeli" />
-          </div>
-          <div class="thumbnail-images">
-            <div class="thumbnail active" data-src="img/Schindler 5500 SAO - Dusk Grey.jpg">
-              <img src="img/Schindler 5500 SAO - Dusk Grey.jpg" alt="Thumbnail 1" />
-            </div>
-            <div class="thumbnail" data-src="img/Schindler 5500 SAO - Mercury Brushed.jpg">
-              <img src="img/Schindler 5500 SAO - Mercury Brushed.jpg" alt="Thumbnail 2" />
-            </div>
-            <div class="thumbnail" data-src="img/Schindler 5500 SAO - Navona Brushed.jpg">
-              <img src="img/Schindler 5500 SAO - Navona Brushed.jpg" alt="Thumbnail 3" />
-            </div>
-          </div>
-        </div>
-        <div class="model-info">
-          <h2 id="modal-model-title">Model nomi</h2>
-          <p id="modal-model-description">Model tavsifi</p>
-          
-          <div class="model-specs">
-            <h3>Texnik ma'lumotlar</h3>
-            <table class="specs-table">
-              <tr>
-                <td>Sig'im:</td>
-                <td id="modal-capacity">8 kishi</td>
-              </tr>
-              <tr>
-                <td>Yuk ko'tarish quvvati:</td>
-                <td id="modal-weight">630 kg</td>
-              </tr>
-              <tr>
-                <td>O'lchamlari:</td>
-                <td id="modal-dimensions">1100 x 1400 mm</td>
-              </tr>
-              <tr>
-                <td>Tezlik:</td>
-                <td id="modal-speed">1.6 m/s</td>
-              </tr>
-              <tr>
-                <td>Material:</td>
-                <td id="modal-material">Qora marmar va zanglamaydigan po'lat</td>
-              </tr>
-              <tr>
-                <td>Yoritish:</td>
-                <td id="modal-lighting">LED chiroqlar</td>
-              </tr>
-              <tr>
-                <td>Qavat ko'rsatkichi:</td>
-                <td id="modal-indicators">Raqamli LCD displey</td>
-              </tr>
-              <tr>
-                <td>Xavfsizlik tizimlari:</td>
-                <td id="modal-safety">Avtomatik qutqarish tizimi, Sensor eshiklar</td>
-              </tr>
-            </table>
-          </div>
-          
-          <div class="model-features">
-            <h3>Qo'shimcha funktsiyalar</h3>
-            <ul id="modal-features">
-              <li><i class="fas fa-check"></i> Ovoz xabarlari</li>
-              <li><i class="fas fa-check"></i> Havoni tozalash tizimi</li>
-              <li><i class="fas fa-check"></i> Wi-Fi ulanish imkoniyati</li>
-              <li><i class="fas fa-check"></i> Energiya tejash rejimi</li>
-              <li><i class="fas fa-check"></i> Sensor boshqaruv paneli</li>
-            </ul>
-          </div>
-          
-          <div class="model-actions">
-            <button class="btn btn-primary open-360-view" id="modal-360-btn">
-              <i class="fas fa-360-degrees"></i> 360° ko'rinish
-            </button>
-            <button class="btn btn-secondary" id="modal-contact-btn">
-              <i class="fas fa-envelope"></i> So'rov yuborish
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="view-360-modal" class="modal">
-    <div class="modal-content view-360-content">
-      <span class="close-modal">&times;</span>
-      <h3 class="modal-title">360° ko'rinish</h3>
-      <div id="panorama-container"></div>
-      <div class="view-controls">
-        <button class="btn btn-control" id="rotate-left">
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <button class="btn btn-control" id="zoom-in">
-          <i class="fas fa-search-plus"></i>
-        </button>
-        <button class="btn btn-control" id="zoom-out">
-          <i class="fas fa-search-minus"></i>
-        </button>
-        <button class="btn btn-control" id="rotate-right">
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div id="qr-modal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h3 class="modal-title">Lift modelini 360° ko'rish uchun QR kodni skanerlang</h3>
-      <div id="qrcode"></div>
-      <p class="modal-description">Ushbu QR kodni skaner qilish orqali liftni 360° aylantirib ko'rishingiz mumkin</p>
-    </div>
-  </div>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
   <script src="js/main.js"></script>
+  <script src="js/language.js"></script>
   <script src="js/catalog.js"></script>
+
 </body>
 </html>

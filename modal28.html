@@ -75,7 +75,7 @@
   
   <div class="logo-overlay">
     <div class="logo">
-      <span class="logo-text">Schindler.<span class="highlight">Uz</span></span>
+      <img src="img/schindler.png" alt="Schindler Logo" class="logo-img" />
     </div>
   </div>
   
@@ -102,7 +102,6 @@
   <a href="catalog.html" class="btn btn-primary back-button">
     <i class="fas fa-arrow-left"></i> Katalogga qaytish
   </a>z
-
   <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
   <script>
     // Elevator model data
@@ -110,26 +109,14 @@
   model1: {
     title: 'K-02 Premium',
     description: 'Qora marmar panelli premium lift kabinasi',
-    panoramaUrl: 'img/Schindler 6000+7000 AP (0024) - Pacific Blue.jpg'
+    panoramaUrl: 'img/Schindler 5000+5000 MR AP (0022) - Iris Mauve Glass.jpg'
   },
-  model2: {
-    title: 'K-03 Klassik',
-    description: 'Klassik dizayndagi lift kabinasi',
-    panoramaUrl: 'img/Schindler 6000 +7000 AP (0024) - Jade Green Glass.jpg'
-  },
-  model3: {
-    title: 'K-04 Zamonaviy',
-    description: 'Zamonaviy dizayn va yoritish',
-    panoramaUrl: 'img/model3-panorama.jpg'
-  }
 };
-
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal-360');
   const modalTitle = modal.querySelector('.modal-title');
   const panoramaContainer = document.getElementById('panorama');
   let viewer;
-
   document.querySelectorAll('.view-details-btn').forEach(button => {
     button.addEventListener('click', () => {
       const modelId = button.getAttribute('data-model');
@@ -166,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
     document.addEventListener('DOMContentLoaded', function() {
       // Get model ID from URL parameters
       const urlParams = new URLSearchParams(window.location.search);
@@ -196,12 +182,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const yaw = viewer.getYaw();
         viewer.setYaw(yaw - 30);
       });
-      
       document.getElementById('rotate-right').addEventListener('click', function() {
         const yaw = viewer.getYaw();
         viewer.setYaw(yaw + 30);
       });
-      
       document.getElementById('zoom-in').addEventListener('click', function() {
         const hfov = viewer.getHfov();
         viewer.setHfov(hfov - 10);

@@ -1,18 +1,177 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const viewDetailButtons = document.querySelectorAll('.view-details-btn');
 
-const catalogItems = document.querySelectorAll('.catalog-item');
-const filterButton = document.getElementById('apply-filters');
-const categoryFilter = document.getElementById('category-filter');
-const capacityFilter = document.getElementById('capacity-filter');
-const materialFilter = document.getElementById('material-filter');
-const viewDetailButtons = document.querySelectorAll('.view-details-btn');
-const qrButtons = document.querySelectorAll('.qr-btn');
-const view360Badges = document.querySelectorAll('.view-360-badge');
-const thumbnails = document.querySelectorAll('.thumbnail');
-const viewControls = document.querySelectorAll('.view-controls button');
-const modalOpenButtons = document.querySelectorAll('.open-360-view');
-const modalContactBtn = document.getElementById('modal-contact-btn');
-const catalogContainer = document.getElementById('catalog-container');
-const pageLinks = document.querySelectorAll('.pagination-number');
+  const modal = document.getElementById('detailsModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+  const modalSpecs = document.getElementById('modalSpecs');
+  const closeBtn = document.querySelector('.close-modal');
+
+  // Batafsil tugmasini bosganda modalni to‘ldirish va ko‘rsatish
+  viewDetailButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const modelId = button.getAttribute('data-model');
+      const item = document.getElementById(modelId);
+
+      if (!item) return;
+
+      const title = item.querySelector('.item-title').innerText;
+      const description = item.querySelector('.item-description').innerText;
+      const specs = item.querySelectorAll('.item-specs .spec');
+
+      modalTitle.innerText = title;
+      modalDescription.innerText = description;
+
+      modalSpecs.innerHTML = '';
+      specs.forEach(spec => {
+        const iconHTML = spec.querySelector('i').outerHTML;
+        const text = spec.querySelector('span').innerText;
+        modalSpecs.innerHTML += `<p>${iconHTML} ${text}</p>`;
+      });
+
+
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+      }
+    
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+      }
+    
+      window.onclick = function(event) {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach(modal => {
+          if (event.target === modal) {
+            modal.style.display = "none";
+          }
+        });
+      };
+    
+      // Avtomatik bog‘lash (agar kerak bo‘lsa):
+      document.querySelectorAll(".view-details-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          const modelId = button.getAttribute("data-model");
+          openModal("modal" + modelId.replace("model", ""));
+        });
+      });
+    
+
+      
+
+      modal.style.display = 'flex'; // Modalni ko‘rsatish
+    });
+  });
+
+  const categoryFilter = document.getElementById('category-filter');
+  const capacityFilter = document.getElementById('capacity-filter');
+  const materialFilter = document.getElementById('material-filter');
+
+  categoryFilter.addEventListener('change', applyFilters);
+  capacityFilter.addEventListener('change', applyFilters);
+  materialFilter.addEventListener('change', applyFilters);
+
+  function applyFilters() {
+    const selectedCategory = categoryFilter.value;
+    const selectedCapacity = capacityFilter.value;
+    const selectedMaterial = materialFilter.value;
+
+    const models = document.querySelectorAll('.catalog-item');
+
+    models.forEach(model => {
+      const category = model.getAttribute('data-category');
+      const capacity = model.getAttribute('data-capacity');
+      const material = model.getAttribute('data-material');
+
+      const matchCategory = selectedCategory === 'all' || category === selectedCategory;
+      const matchCapacity = selectedCapacity === 'all' || capacity === selectedCapacity;
+      const matchMaterial = selectedMaterial === 'all' || material === selectedMaterial;
+
+      if (matchCategory && matchCapacity && matchMaterial) {
+        model.style.display = 'block';
+      } else {
+        model.style.display = 'none';
+      }
+    });
+  }
+
+
+  // Modalni yopish tugmasi funksiyasi
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Modal tashqarisiga bosilganda ham yopish
+  window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+
+  // 360 rasmlarni yuklash va ko‘rsatish
+  let currentAngle = 0;
+  const totalAngles = 36;
+
+  function load360Images(modelId) {
+    const viewerWrapper = document.querySelector(`#viewer-${modelId} .360-image`);
+    const imageBasePath = `img/360/${modelId}/`;
+
+    // Avvalgi rasm(lar)ni o‘chiramiz
+    viewerWrapper.innerHTML = '';
+
+    // Yangi <img> yaratamiz
+    const img = document.createElement('img');
+    img.src = `${imageBasePath}1.jpg`;
+    img.alt = `Angle 1`;
+    img.classList.add('angle-frame');
+    viewerWrapper.appendChild(img);
+
+    currentAngle = 0;
+
+    // Tugmalarni bog‘lash
+    const prevBtn = document.querySelector('.prev-angle');
+    const nextBtn = document.querySelector('.next-angle');
+
+    if (prevBtn && nextBtn) {
+      prevBtn.onclick = () => {
+        currentAngle = (currentAngle - 1 + totalAngles) % totalAngles;
+        img.src = `${imageBasePath}${currentAngle + 1}.jpg`;
+      };
+
+      nextBtn.onclick = () => {
+        currentAngle = (currentAngle + 1) % totalAngles;
+        img.src = `${imageBasePath}${currentAngle + 1}.jpg`;
+      };
+    }
+  }
+
+  // 'Batafsil' tugmasi orqali 360 ko‘rishni ochish
+  viewDetailButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const modelId = this.getAttribute('data-model');
+      const modal360 = document.getElementById('modal-360');
+
+      load360Images(modelId);
+
+      modal360.style.display = "block";
+    });
+  });
+
+
+
+  // Modalni yopish tugmasi
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Foydalanuvchi modal tashqarisiga bosganda ham yopiladi
+  window.addEventListener('click', (e) => {
+    if (e.target == modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+
 
 
 const liftData = {
@@ -120,6 +279,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+
 
 
 // Boshlanishida birinchi sahifani ko‘rsatish

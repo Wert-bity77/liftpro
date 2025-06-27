@@ -1,4 +1,3 @@
-
 .catalog-filters {
   padding: var(--spacing-lg) 0;
   background-color: var(--white-color);
@@ -6,12 +5,73 @@
   box-shadow: var(--shadow-sm);
 }
 
+
+.modal-a {
+  position: relative;
+  left: 170px;
+  color: red;
+}
+
+a {
+  position: relative;
+  left: 120px;
+}
+
+.modal {
+  display: none; /* boshlang'ichda yashirin */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5); /* qorong'u fon */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 6px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
+
 .filter-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--spacing-md);
 }
+
+
+.logo-container:hover {
+  transform: scale(1.05);
+  background-color: #e6e6e6;
+}
+
+.logo-img {
+  height: 60px; /* o‘zgaruvchi: logoning balandligi */
+  width: auto;
+  object-fit: contain;
+}
+
 
 #filter-input {
   padding: 8px;
@@ -152,75 +212,6 @@
 .item-actions .btn {
   flex: 1;
 }
-
-/* === PAGINATION === */
-.pagination {
-  padding: var(--spacing-lg) 0;
-}
-
-.pagination-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--spacing-md);
-}
-
-.pagination-prev,
-.pagination-next {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--white-color);
-  box-shadow: var(--shadow-sm);
-  color: var(--dark-color);
-  transition: all var(--transition-fast);
-}
-
-.pagination-prev:hover,
-.pagination-next:hover {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-}
-
-.pagination-prev.disabled,
-.pagination-next.disabled {
-  background-color: var(--light-gray);
-  color: var(--gray-color);
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.pagination-numbers {
-  display: flex;
-  gap: var(--spacing-xs);
-}
-
-.pagination-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: var(--white-color);
-  box-shadow: var(--shadow-sm);
-  color: var(--dark-color);
-  font-weight: 500;
-  transition: all var(--transition-fast);
-}
-
-.pagination-number:hover {
-  background-color: var(--light-gray);
-}
-
-.pagination-number.active {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-}
-
 /* === MODEL DETAILS MODAL === */
 .model-details-content {
   max-width: 900px;
@@ -583,4 +574,4 @@
   .elevator-actions {
     flex-direction: column;
   }
-}
+}  

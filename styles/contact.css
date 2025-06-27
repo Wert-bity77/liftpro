@@ -20,6 +20,17 @@
   transition: transform var(--transition-medium);
 }
 
+.logo-container:hover {
+  transform: scale(1.05);
+  background-color: #e6e6e6;
+}
+
+.logo-img {
+  height: 60px; /* o‘zgaruvchi: logoning balandligi */
+  width: auto;
+  object-fit: contain;
+}
+
 .contact-card:hover {
   transform: translateY(-10px);
 }

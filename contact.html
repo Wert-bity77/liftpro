@@ -17,7 +17,9 @@
     <div class="header-container">
       <div class="logo">
         <a href="index.html">
-          <span class="logo-text">Schndler.<span class="highlight">Uz</span></span>
+          <div class="logo-container">
+            <img src="img/schindler.png" alt="Schindler Logo" class="logo-img" />
+          </div>
         </a>
       </div>
       <nav class="main-nav">
@@ -26,7 +28,16 @@
           <li class="nav-item"><a href="catalog.html" class="nav-link">Katalog</a></li>
           <li class="nav-item"><a href="about.html" class="nav-link">Kompaniya Haqida</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link active">Bog'lanish</a></li>
+          <li class="nav-item"><a href="obyekt.html" class="nav-link">Obyekt</a></li>
+
         </ul>
+        <div class="language-selector">
+          <select id="language-select" class="language-dropdown">
+            <option value="uz">O'ZB</option>
+            <option value="ru">РУС</option>
+            <option value="en">ENG</option>
+          </select>
+        </div>
       </nav>
       <div class="menu-toggle">
         <i class="fas fa-bars"></i>
@@ -250,13 +261,15 @@
             <li><a href="catalog.html">Katalog</a></li>
             <li><a href="about.html">Kompaniya Haqida</a></li>
             <li><a href="contact.html">Bog'lanish</a></li>
+            <li><a href="obyekt.html">Obyekt</a></li>
+
           </ul>
         </div>
         <div class="footer-column">
           <h3 class="footer-title">Bog'lanish</h3>
           <ul class="contact-info">
             <li><i class="fas fa-map-marker-alt"></i> Toshkent sh., Chilonzor tumani, Bunyodkor ko'chasi, 12-uy</li>
-            <li><i class="fas fa-phone"></i> +998 90 123 45 67</li>
+            <li><i class="fas fa-phone"></i> +998 91 014 70 70</li>
             <li><i class="fas fa-envelope"></i> info@liftpro.uz</li>
           </ul>
         </div>
@@ -292,5 +305,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/language.js"></script>
 </body>
 </html>
